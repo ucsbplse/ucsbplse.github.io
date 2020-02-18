@@ -1,1 +1,163 @@
-Hello World
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <title>PLSE@UCSB</title>
+  <link rel="stylesheet" type="text/css" href="dash.css">
+  <!-- icons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="icons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="icons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="icons/manifest.json">
+  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#003660">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#003660">
+  <meta name="msapplication-TileImage" content="icons/mstile-144x144.png">
+  <meta name="msapplication-config" content="icons/browserconfig.xml">
+  <meta name="theme-color" content="#003660">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- end icons -->
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script>
+    function show_more(evt) {
+      lis = document.querySelectorAll("#news ol > li");
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].style.display = "block";
+      }
+      document.getElementById("more").style.display = "none";
+      evt.preventDefault();
+      return false;
+    }
+
+    function show_less() {
+      lis = document.querySelectorAll("#news ol > li");
+      for (var i = 7; i < lis.length; i++) {
+        lis[i].style.display = "none";
+      }
+      document.getElementById("more").style.display = "block";
+    }
+
+    function onload() {
+      show_less();
+      var more = document.querySelector("#more a");
+      more.addEventListener("click", show_more);
+      if ('ontouchstart' in document.documentElement) {
+        captions = document.querySelectorAll("ul.photo-list a .caption");
+        for (var i = 0; i < captions.length; i++) {
+          captions[i].style.opacity = 1.0;
+        }
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", onload);
+  </script>
+<!--   <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-65215143-1', 'auto');
+    ga('send', 'pageview');
+
+  </script> -->
+<style type="text/css">* {
+ text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0) 0px 0px 0px !important; 
+}</style></head>
+<body>
+  <header>
+    <a href="./index.html"><h1>PLSE@UCSB</h1></a>
+    <nav>
+      <li><a href="#news">News</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#faculty">People</a></li>
+      <li><a href="./meetings.html">Meetings</a></li>
+      <!-- <li><a href="./colloquia/">Colloquia</a></li> -->
+      <!-- <li><a href="./internal/">Internal</a></li> -->
+    </nav>
+  </header>
+
+  <section>
+  <p>
+    <a href="https://cs.ucsb.edu">UCSB CS</a>’ Programming
+    Languages and Software Engineering group advances fundamental
+    research and practical applications in programming
+    environments, program analysis, language design, synthesis,
+    compilers, testing, verification, and security.
+  </p>
+  </section>
+
+  <section id="news">
+  <h2>
+    News
+  </h2>
+
+  <ol>
+    <li ><time>Feb 17<span class="year"> 2020</span></time> Welcome to PLSE@UCSB.</li>
+    
+    <li style="display: none;"><time>Sept 7<span class="year"> 2017</span></time> This is a hidden news.</li>
+    
+    <li id="more" style="display: block;"><a href="?more">See all News posts</a></li>
+  </ol>
+  </section>
+
+  <section id="projects">
+  <h2>
+    Projects
+  </h2>
+  <ul class="project-list">
+    <li> <a href="https://github.com/chyanju/MARS-Dataset"> <h3>Mars</h3> A synthesis framework that supports multi-layer specification. </a> </li>
+  </ul>
+  </section>
+
+  <section id="faculty">
+  <h2>Faculty</h2>
+  <ul class="photo-list">
+    <li><a href="https://sites.cs.ucsb.edu/~bultan/"><img src="photos/tevfik_bultan.jpg"><span class="caption">Tevfik Bultan</span></a></li>
+    <li><a href="https://shumochu.com/"><img src="photos/shumo_chu.jpg"><span class="caption">Shumo Chu</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~yufeiding/"><img src="photos/yufei_ding.jpg"><span class="caption">Yufei Ding</span></a></li>
+    <li><a href="https://fredfeng.github.io/"><img src="photos/yu_feng.jpg"><span class="caption">Yu Feng</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~benh/"><img src="photos/ben_hardekopf.jpg"><span class="caption">Ben Hardekopf</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~ckrintz/"><img src="photos/chandra_krintz.jpg"><span class="caption">Chandra Krintz</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~chris/"><img src="photos/christopher_kruegel.jpg"><span class="caption">Christopher Kruegel</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~vigna/"><img src="photos/giovanni_vigna.jpg"><span class="caption">Giovanni Vigna</span></a></li>
+  </ul>
+  </section>
+
+
+  <section id="grad-students">
+  <h2>Grad Students</h2>
+  <ul class="photo-list">
+    <li><a href="https://sites.cs.ucsb.edu/~priyanka/"><img src="photos/priyanka_bose.jpg"><span class="caption">Priyanka Bose</span></a></li>
+    <li><a href="https://sites.cs.ucsb.edu/~yanju/"><img src="photos/yanju_chen.jpg"><span class="caption">Yanju Chen</span></a></li>
+    <li><a href="http://dipanjan.in/"><img src="photos/dipanjan_das.jpg"><span class="caption">Dipanjan Das</span></a></li>
+  </ul>
+  </section>
+
+
+  <section id="undergrads">
+  <h2>Undergraduates</h2>
+  <ul class="photo-list">
+  <li><a href=""><img src="photos/bryan_tan.jpg"><span class="caption">Bryan Tan</span></a></li>
+  </ul>
+  </section>
+
+
+  <section id="phd-alumni">
+  <h2>Ph.D. Alumni</h2>
+  <ul class="long-list">
+  <li><a href="">Name</a> <span>Now Where</span></li>
+  </ul>
+  </section>
+
+
+
+</body></html>
