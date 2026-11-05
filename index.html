@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Fira+Code:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=6">
+<link rel="stylesheet" href="site.css?v=7">
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -114,33 +114,37 @@
 
 <section id="publications" class="reveal">
   <h2>Featured Publications</h2>
-  <ul class="rows pubs">
+  <ul class="rows">
     <li><time>2024</time><span>
       <a class="title" href="https://eprint.iacr.org/2023/547">Certifying Zero-Knowledge Circuits with Refinement Types</a>
       <span class="authors"><b>Junrui Liu</b>, Ian Kretz, <b>Hanzhi Liu</b>, <b>Bryan Tan</b>, Jonathan Wang, Yi Sun, Luke Pearson, Anders Miltner, Isil Dillig, <b>Yu Feng</b></span>
-      <span class="venue">IEEE S&amp;P 2024</span></span><a class="cites" href="https://scholar.google.com/scholar?cites=1125240230720634208" title="Cited by 41 on Google Scholar"><span class="n" data-n="41">41</span><span class="l">citations</span></a></li>
+      <span class="venue">IEEE S&amp;P 2024</span></span></li>
     <li><time>2023</time><span>
       <a class="title" href="https://dl.acm.org/doi/pdf/10.1145/3591282">Automated Detection of Under-Constrained Circuits in Zero-Knowledge Proofs</a>
       <span class="authors">Shankara Pailoor, <b>Yanju Chen</b>, Franklyn Wang, Clara Rodríguez, Jacob Van Geffen, Jason Morton, Michael Chu, Brian Gu, <b>Yu Feng</b>, Isil Dillig</span>
-      <span class="venue">PLDI 2023</span></span><a class="cites" href="https://scholar.google.com/scholar?cites=5094843991364015526" title="Cited by 66 on Google Scholar"><span class="n" data-n="66">66</span><span class="l">citations</span></a></li>
+      <span class="venue">PLDI 2023</span></span></li>
+    <li><time>2022</time><span>
+      <a class="title" href="https://dl.acm.org/doi/10.1145/3519939.3523709">Visualization Question Answering Using Introspective Program Synthesis</a>
+      <span class="authors"><b>Yanju Chen</b>, Xifeng Yan, <b>Yu Feng</b></span>
+      <span class="venue">PLDI 2022 <span class="award">Distinguished Paper</span></span></span></li>
     <li><time>2022</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/sailfish.pdf">SAILFISH: Vetting Smart Contract State-Inconsistency Bugs in Seconds</a>
       <span class="authors">Priyanka Bose, Dipanjan Das, <b>Yanju Chen</b>, <b>Yu Feng</b>, Christopher Kruegel, Giovanni Vigna</span>
-      <span class="venue">IEEE S&amp;P 2022</span></span><a class="cites" href="https://scholar.google.com/scholar?cites=9836867333475884870" title="Cited by 209 on Google Scholar"><span class="n" data-n="209">209</span><span class="l">citations</span></a></li>
+      <span class="venue">IEEE S&amp;P 2022</span></span></li>
     <li><time>2022</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/soltype.pdf">SolType: Refinement Types for Arithmetic Overflow in Solidity</a>
       <span class="authors"><b>Bryan Tan</b>, Benjamin Mariano, Shuvendu Lahiri, Isil Dillig, <b>Yu Feng</b></span>
-      <span class="venue">POPL 2022</span></span><a class="cites" href="https://scholar.google.com/scholar?cites=6517864062949437787" title="Cited by 48 on Google Scholar"><span class="n" data-n="48">48</span><span class="l">citations</span></a></li>
+      <span class="venue">POPL 2022</span></span></li>
     <li><time>2020</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/ase20-solar.pdf">Summary-Based Symbolic Evaluation for Smart Contracts</a>
       <span class="authors"><b>Yu Feng</b>, Emina Torlak, Ras Bodik</span>
-      <span class="venue">ASE 2020 <span class="award">Distinguished Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=11510248796921058435" title="Cited by 31 on Google Scholar"><span class="n" data-n="31">31</span><span class="l">citations</span></a></li>
+      <span class="venue">ASE 2020 <span class="award">Distinguished Paper</span></span></span></li>
     <li><time>2018</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/pldi18-neo.pdf">Program Synthesis using Conflict-Driven Learning</a>
       <span class="authors"><b>Yu Feng</b>, Ruben Martins, Osbert Bastani, Isil Dillig</span>
-      <span class="venue">PLDI 2018 <span class="award">Distinguished Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=10237534397246100538" title="Cited by 256 on Google Scholar"><span class="n" data-n="256">256</span><span class="l">citations</span></a></li>
+      <span class="venue">PLDI 2018 <span class="award">Distinguished Paper</span></span></span></li>
   </ul>
-  <p class="note">Citation counts from <a href="https://scholar.google.com/citations?user=urQ9fNgAAAAJ">Google Scholar</a>, November 2026. Full publication list there.</p>
+  <p class="note">Full list on <a href="https://scholar.google.com/citations?user=urQ9fNgAAAAJ">Google Scholar</a>.</p>
 </section>
 
 <section id="projects" class="reveal">
@@ -196,20 +200,6 @@
     setTimeout(function () { el.classList.add('in'); }, 40 + i * 80);
   });
 
-  // citation counts tick up once when the page loads
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.cites .n').forEach(function (el) {
-      var n = +el.dataset.n, t0 = null;
-      el.textContent = '0';
-      function step(t) {
-        if (!t0) t0 = t;
-        var k = Math.min((t - t0) / 1100, 1), e = 1 - Math.pow(1 - k, 3);
-        el.textContent = Math.round(n * e);
-        if (k < 1) requestAnimationFrame(step);
-      }
-      setTimeout(function () { requestAnimationFrame(step); }, 500);
-    });
-  }
 })();
 </script>
 </body>
