@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Fira+Code:wght@400;500&display=swap">
-<link rel="stylesheet" href="site.css?v=5">
+<link rel="stylesheet" href="site.css?v=6">
 <script>document.documentElement.className += " js";</script>
 </head>
 <body>
@@ -114,25 +114,25 @@
 
 <section id="publications" class="reveal">
   <h2>Featured Publications</h2>
-  <ul class="rows">
+  <ul class="rows pubs">
     <li><time>2022</time><span>
       <a class="title" href="https://dl.acm.org/doi/10.1145/3519939.3523709">Visualization Question Answering Using Introspective Program Synthesis</a>
       <span class="authors"><b>Yanju Chen</b>, Xifeng Yan, <b>Yu Feng</b></span>
-      <span class="venue">PLDI 2022 <span class="award">Distinguished Paper</span></span></span></li>
+      <span class="venue">PLDI 2022 <span class="award">Distinguished Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=16972789022835152728" title="Cited by 2 on Google Scholar"><span class="n" data-n="2">2</span><span class="l">citations</span></a></li>
     <li><time>2021</time><span>
       <a class="title" href="https://arxiv.org/pdf/2102.01024.pdf">Falx: Synthesis-Powered Visualization Authoring</a>
       <span class="authors">Chenglong Wang, <b>Yu Feng</b>, Ras Bodik, Isil Dillig, Alvin Cheung, Amy J. Ko</span>
-      <span class="venue">CHI 2021 <span class="award">Best Paper</span></span></span></li>
+      <span class="venue">CHI 2021 <span class="award">Best Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=889215876329853524" title="Cited by 81 on Google Scholar"><span class="n" data-n="81">81</span><span class="l">citations</span></a></li>
     <li><time>2020</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/ase20-solar.pdf">Summary-Based Symbolic Evaluation for Smart Contracts</a>
       <span class="authors"><b>Yu Feng</b>, Emina Torlak, Ras Bodik</span>
-      <span class="venue">ASE 2020 <span class="award">Distinguished Paper</span></span></span></li>
+      <span class="venue">ASE 2020 <span class="award">Distinguished Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=11510248796921058435" title="Cited by 31 on Google Scholar"><span class="n" data-n="31">31</span><span class="l">citations</span></a></li>
     <li><time>2018</time><span>
       <a class="title" href="https://fredfeng.github.io/papers/pldi18-neo.pdf">Program Synthesis using Conflict-Driven Learning</a>
       <span class="authors"><b>Yu Feng</b>, Ruben Martins, Osbert Bastani, Isil Dillig</span>
-      <span class="venue">PLDI 2018 <span class="award">Distinguished Paper</span></span></span></li>
+      <span class="venue">PLDI 2018 <span class="award">Distinguished Paper</span></span></span><a class="cites" href="https://scholar.google.com/scholar?cites=10237534397246100538" title="Cited by 256 on Google Scholar"><span class="n" data-n="256">256</span><span class="l">citations</span></a></li>
   </ul>
-  <p class="note" style="margin-top:.8em">Full list on <a href="https://scholar.google.co.uk/citations?user=urQ9fNgAAAAJ">Google Scholar</a>.</p>
+  <p class="note">Citation counts from <a href="https://scholar.google.com/citations?user=urQ9fNgAAAAJ">Google Scholar</a>, November 2026. Full publication list there.</p>
 </section>
 
 <section id="projects" class="reveal">
@@ -188,19 +188,20 @@
     setTimeout(function () { el.classList.add('in'); }, 40 + i * 80);
   });
 
-  // mark the nav entry for the section in view
-  var links = {};
-  document.querySelectorAll('nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
-  var spy = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!links[e.target.id]) return;
-      if (e.isIntersecting) {
-        Object.values(links).forEach(function (a) { a.classList.remove('active'); });
-        links[e.target.id].classList.add('active');
+  // citation counts tick up once when the page loads
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.cites .n').forEach(function (el) {
+      var n = +el.dataset.n, t0 = null;
+      el.textContent = '0';
+      function step(t) {
+        if (!t0) t0 = t;
+        var k = Math.min((t - t0) / 1100, 1), e = 1 - Math.pow(1 - k, 3);
+        el.textContent = Math.round(n * e);
+        if (k < 1) requestAnimationFrame(step);
       }
+      setTimeout(function () { requestAnimationFrame(step); }, 500);
     });
-  }, { rootMargin: '-35% 0px -60% 0px' });
-  Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
+  }
 })();
 </script>
 </body>

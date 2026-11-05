@@ -73,9 +73,8 @@ nav a::before {
   white-space: nowrap; line-height: 1; vertical-align: -.06em;
   transition: width .2s ease, margin-right .2s ease;
 }
-nav a:hover::before, nav a.active::before { width: .9em; margin-right: 3px; }
+nav a:hover::before { width: .9em; margin-right: 3px; }
 nav a:hover { background: #ececec; }
-nav a.active { background: var(--tab); }
 
 /* ---------- banner ---------- */
 header { padding: 26px 10px 14px; }
@@ -142,6 +141,30 @@ time {
 .venue { display: block; font-family: var(--font-ui); font-size: 12px; color: var(--muted); }
 .award { margin-left: .4em; color: var(--award); font-weight: 600; }
 .award::before { content: "\2605\00a0"; }
+
+/* citations, Scholar-style: a count column on the right */
+.pubs > li { grid-template-columns: 3.6em 1fr 4.4em; }
+.cites {
+  align-self: start;
+  display: flex; flex-direction: column; align-items: flex-end;
+  margin-top: .1em; padding: 3px 6px 4px;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color .2s ease;
+}
+.cites .n {
+  font-family: var(--font-mono);
+  font-size: 17px; font-weight: 500; line-height: 1.1;
+  color: var(--link);
+  font-variant-numeric: tabular-nums;
+}
+.cites .l {
+  font-family: var(--font-ui);
+  font-size: 10px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--muted);
+}
+.cites:hover { background: #eef1fb; }
+.cites:hover .n { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- expandable ---------- */
 .toggle {
@@ -212,4 +235,5 @@ footer {
   .people li { width: calc(50% - 8px); }
   .people img { width: 100%; height: auto; aspect-ratio: 1; }
   .rows > li { grid-template-columns: 3em 1fr; column-gap: .6em; }
+  .pubs > li { grid-template-columns: 3em 1fr 3.4em; }
 }
