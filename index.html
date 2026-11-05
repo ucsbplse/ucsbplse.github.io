@@ -1,189 +1,207 @@
-<!doctype html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <title>PLSE@UCSB</title>
-  <link rel="stylesheet" type="text/css" href="dash.css?v=2">
-  <!-- icons -->
-  <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-touch-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-touch-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-touch-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-touch-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-touch-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-touch-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png">
-  <link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="icons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="icons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16">
-  <link rel="manifest" href="icons/manifest.json">
-  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#003660">
-  <link rel="shortcut icon" href="icons/favicon.ico">
-  <meta name="msapplication-TileColor" content="#003660">
-  <meta name="msapplication-TileImage" content="icons/mstile-144x144.png">
-  <meta name="msapplication-config" content="icons/browserconfig.xml">
-  <meta name="theme-color" content="#003660">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- end icons -->
-  <script async="" src="//www.google-analytics.com/analytics.js"></script><script>
-    function show_more(evt) {
-      lis = document.querySelectorAll("#news ol > li");
-      for (var i = 0; i < lis.length; i++) {
-        lis[i].style.display = "block";
-      }
-      document.getElementById("more").style.display = "none";
-      evt.preventDefault();
-      return false;
-    }
-
-    function show_less() {
-      lis = document.querySelectorAll("#news ol > li");
-      for (var i = 7; i < lis.length; i++) {
-        lis[i].style.display = "none";
-      }
-      document.getElementById("more").style.display = "block";
-    }
-
-    function onload() {
-      show_less();
-      var more = document.querySelector("#more a");
-      more.addEventListener("click", show_more);
-      if ('ontouchstart' in document.documentElement) {
-        captions = document.querySelectorAll("ul.photo-list a .caption");
-        for (var i = 0; i < captions.length; i++) {
-          captions[i].style.opacity = 1.0;
-        }
-      }
-    }
-
-    window.addEventListener("DOMContentLoaded", onload);
-  </script>
-<!--   <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-65215143-1', 'auto');
-    ga('send', 'pageview');
-
-  </script> -->
-<style type="text/css">* {
- text-shadow: transparent 0px 0px 0px, rgba(0,0,0,0) 0px 0px 0px !important; 
-}</style></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PLSE@UCSB</title>
+<meta name="description" content="The Programming Languages and Software Engineering group at UC Santa Barbara, led by Professor Yu Feng.">
+<link rel="icon" type="image/png" href="icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="icons/favicon-16x16.png" sizes="16x16">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png">
+<link rel="shortcut icon" href="icons/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Inter:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400..600;1,7..72,400..500&family=Fira+Code:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css?v=5">
+<script>document.documentElement.className += " js";</script>
+</head>
 <body>
-  <header>
-    <a href="./index.html"><h1>PLSE@UCSB</h1></a>
-    <nav>
-      <li><a href="#news">News</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#faculty">People</a></li>
-      <li><a href="#alumni">Alumni</a></li>
-      <!-- <li><a href="./meetings.html">Meetings</a></li> -->
-      <!-- <li><a href="./colloquia/">Colloquia</a></li> -->
-      <!-- <li><a href="./internal/">Internal</a></li> -->
-    </nav>
-  </header>
 
-  <section>
+<div id="page">
+
+<nav>
+  <a href="#top">Home</a>
+  <a href="#news">News</a>
+  <a href="#people">People</a>
+  <a href="#publications">Publications</a>
+  <a href="#projects">Projects</a>
+</nav>
+
+<header id="top" class="reveal">
+  <h1>The PLSE Group at UCSB</h1>
+  <p class="subtitle">Programming Languages and Software Engineering</p>
+</header>
+
+<main>
+
+<section id="about" class="reveal">
+  <h2>About Us</h2>
   <p>
-    <a href="https://cs.ucsb.edu">UCSB CS's</a>’ Programming Languages and 
-    Software Engineering group advances fundamental research and practical applications 
-    in programming environments, program analysis, language design, synthesis, 
-    compilers, testing, verification, and security. We have strong ties to the SecLab@UCSB, 
-    Google Security, Microsoft Research, Mozilla research, PLSE@UW, Utopia@UT, and others.
+    We are a research group led by Professor <a href="https://fredfeng.github.io/">Yu Feng</a>
+    in the <a href="https://cs.ucsb.edu/">Department of Computer Science</a>.
+    We build automated reasoning tools at the intersection of programming languages,
+    formal verification, and security, rooted in program synthesis, type theory, and
+    constraint solving. A unifying theme is combining logical reasoning with learning
+    to push the frontier of what automated tools can guarantee.
   </p>
-  </section>
+</section>
 
-  <section id="news">
-  <h2>
-    News
-  </h2>
-
-  <ol>
-    <li><time>2026</time> <em>Automated Safety Analysis for Agentic Workflows</em> accepted to ICSE 2027.</li>
-    <li><time>2026</time> <em>Revealing Semantic Gaps in Zero-Knowledge Virtual Machines via Obligation-Targeted Semantic Fuzzing</em> accepted to NDSS 2027.</li>
-    <li><time>2026</time> <a href="https://junrui-liu.github.io/">Junrui Liu</a> joins <a href="https://www.calpoly.edu/">Cal Poly</a> as an Assistant Professor of Computer Science. Congratulations!</li>
-    <li><time>2026</time> <em>Thunderbolt: Fast Asynchronous Off-Chain Bitcoin Transfers</em> accepted to CCS 2026.</li>
-    <li><time>2025</time> <a href="https://github.com/sjxer723/Tabby">Tabby</a>, a synthesis-aided compiler for high-performance zero-knowledge proof circuits, appears at OOPSLA 2025.</li>
-    <li><time>2025</time> <a href="https://chyanju.github.io/">Yanju Chen</a> starts as a postdoctoral scholar at UC San Diego.</li>
-    <li><time>2025</time> Yu Feng receives an Ethereum Academic Award for the third year in a row (2023, 2024, 2025).</li>
-    <li><time>2024</time> Two papers at CCS 2024: <a href="https://github.com/whbjzzwjxq/Foray">Foray</a> (attack synthesis for DeFi protocols) and <em>AuthSaber</em> (safety verification of OpenID Connect programs).</li>
-    <li><time>2024</time> <em>Certifying Zero-Knowledge Circuits with Refinement Types</em> appears at IEEE S&amp;P 2024, and <a href="https://github.com/whbjzzwjxq/ZKAP">ZKAP</a> appears at USENIX Security 2024.</li>
-    <li><time>2024</time> <em>Refinement Types for Visualization</em> appears at ASE 2024.</li>
-    <li><time>2023</time> Two papers at PLDI 2023: <a href="https://github.com/Veridise/Picus">Picus</a> (under-constrained ZK circuits) and conflict-driven synthesis for layout engines.</li>
-    <li><time>2023</time> Yanju Chen defends the Ph.D. thesis, <em>Deduction-Powered Neural Program Synthesis: A Synergistic Perspective</em>.</li>
-    <li><time>2022</time> <a href="https://github.com/chyanju/Poe">Visualization Question Answering Using Introspective Program Synthesis</a> wins an ACM SIGPLAN Distinguished Paper Award at PLDI 2022.</li>
-    <li><time>2022</time> <a href="https://github.com/UCSB-PLSE/solid-public">SolType</a> appears at POPL 2022, <a href="https://github.com/ucsb-seclab/sailfish">Sailfish</a> at IEEE S&amp;P 2022, and Hecate at ASPLOS 2022.</li>
-    <li><time>2021</time> Falx (synthesis-powered visualization authoring) wins a Best Paper Award at CHI 2021.</li>
-    <li><time>2021</time> Yu Feng receives a Google Faculty Research Award (Security).</li>
-    <li><time>2020</time> <em>Summary-Based Symbolic Evaluation for Smart Contracts</em> wins an ACM SIGSOFT Distinguished Paper Award at ASE 2020.</li>
-    <li><time>Feb 17<span class="year"> 2020</span></time> Welcome to PLSE@UCSB.</li>
-
-    <li id="more" style="display: block;"><a href="?more">See all News posts</a></li>
+<section id="current" class="reveal">
+  <h2>Current Work</h2>
+  <ol class="focus">
+    <li><b>Formal methods and security for AI agents</b>, ensuring autonomous systems behave
+      safely and correctly through verification and runtime guarantees.</li>
+    <li><b>Compilers and verifiers for zero-knowledge proof circuits</b>, with tools such as
+      Tabby and Tessel that detect vulnerabilities and optimize performance in ZK systems
+      deployed in production.</li>
+    <li><b>Smart contract and DeFi security</b>, including attack synthesis and
+      state-inconsistency detection.</li>
+    <li><b>Synthesis-driven tools for end-user programming</b>, such as data visualization
+      and code transpilation.</li>
   </ol>
-  </section>
+</section>
 
-  <section id="projects">
-  <h2>
-    Projects
-  </h2>
-  <ul class="project-list">
-    <li> <a href="https://github.com/sjxer723/Tabby"> <h3>Tabby</h3> Synthesis-aided compiler for high-performance zero-knowledge proof circuits (OOPSLA'25) </a> </li>
-    <li> <a href="https://github.com/whbjzzwjxq/beak-fuzz"> <h3>Beak</h3> Semantic fuzzing that finds bugs in zero-knowledge virtual machines (NDSS'27) </a> </li>
-    <li> <a href="https://github.com/RiemaLabs/thunderbolt/"> <h3>Thunderbolt</h3> Fast asynchronous off-chain Bitcoin transfers (CCS'26) </a> </li>
-    <li> <a href="https://github.com/whbjzzwjxq/Foray"> <h3>Foray</h3> Attack synthesis against deep logical vulnerabilities in DeFi protocols (CCS'24) </a> </li>
-    <li> <a href="https://github.com/whbjzzwjxq/ZKAP"> <h3>ZKAP</h3> Practical security analysis of zero-knowledge proof circuits (USENIX Security'24) </a> </li>
-    <li> <a href="https://eprint.iacr.org/2023/547"> <h3>Coda</h3> Certifying zero-knowledge circuits with refinement types (S&amp;P'24) </a> </li>
-    <li> <a href="https://github.com/Veridise/Picus"> <h3>Picus</h3> Automated detection of under-constrained circuits in zero-knowledge proofs (PLDI'23) </a> </li>
-    <li> <a href="https://github.com/chyanju/SolInv"> <h3>SolInv</h3> Learning smart contract invariants using reinforcement learning (ASE'22) </a> </li>
-    <li> <a href="https://github.com/chyanju/Poe"> <h3>Poe</h3> Visualization question answering using introspective program synthesis (PLDI'22) </a> </li>
-    <li> <a href="https://github.com/ucsb-seclab/sailfish"> <h3>Sailfish</h3> Vetting smart contract state-inconsistency bugs in seconds (S&amp;P'22) </a> </li>
-    <li> <a href="https://github.com/UCSB-PLSE/solid-public"> <h3>SolType</h3> Refinement types for Solidity (POPL'22) </a> </li>
-    <li> <a href="https://github.com/chyanju/hecate"> <h3>Hecate</h3> Tree traversal synthesis using domain-specific symbolic compilation (ASPLOS'22) </a> </li>
-    <li> <a href="https://github.com/chyanju/MARS-Dataset"> <h3>Mars</h3> A synthesis framework that supports multi-layer specification (FSE'19) </a> </li>
-    <li> <a href="https://github.com/fredfeng/Trinity"> <h3>Trinity</h3> An extensible synthesis framework for data science (VLDB'19) </a> </li>
-    <li> <a href="https://github.com/utopia-group/ReCoeus"> <h3>Coeus</h3> Relational verification using reinforcement learning (OOPSLA'19) </a> </li>
-    <li> <a href="https://github.com/utopia-group/neo"> <h3>Neo</h3> Program synthesis using conflict-driven learning (PLDI'18) </a> </li>
-    <li> <a href="https://github.com/utopia-group/sypet"> <h3>SyPet</h3> Component-based synthesis for complex APIs (POPL'17) </a> </li>
-    <li> <a href="https://github.com/utopia-group/apposcopy"> <h3>Apposcopy</h3> Semantics-based detection of Android malware through static analysis (FSE'14) </a> </li>
+<section id="news" class="reveal">
+  <h2>News</h2>
+  <ul class="rows">
+    <li><time>2026</time><span><em>Automated Safety Analysis for Agentic Workflows</em> accepted to ICSE 2027.</span></li>
+    <li><time>2026</time><span><em>Revealing Semantic Gaps in Zero-Knowledge Virtual Machines via Obligation-Targeted Semantic Fuzzing</em> accepted to NDSS 2027.</span></li>
+    <li><time>2026</time><span><a href="https://junrui-liu.github.io/">Junrui Liu</a> joins <a href="https://www.calpoly.edu/">Cal Poly</a> as an Assistant Professor of Computer Science. Congratulations!</span></li>
+    <li><time>2026</time><span><em>Thunderbolt: Fast Asynchronous Off-Chain Bitcoin Transfers</em> accepted to CCS 2026.</span></li>
+  </ul>
+  <div class="collapse" id="more-news"><div>
+    <ul class="rows">
+      <li><time>2025</time><span><a href="https://github.com/sjxer723/Tabby">Tabby</a>, a synthesis-aided compiler for high-performance zero-knowledge proof circuits, appears at OOPSLA 2025.</span></li>
+      <li><time>2025</time><span><a href="https://chyanju.github.io/">Yanju Chen</a> starts as a postdoctoral scholar at UC San Diego.</span></li>
+      <li><time>2025</time><span>Yu Feng receives an Ethereum Academic Award for the third year in a row.</span></li>
+      <li><time>2024</time><span>Two papers at CCS 2024: <a href="https://github.com/whbjzzwjxq/Foray">Foray</a> and <em>AuthSaber</em>.</span></li>
+      <li><time>2024</time><span><em>Certifying Zero-Knowledge Circuits with Refinement Types</em> appears at IEEE S&amp;P 2024, and <a href="https://github.com/whbjzzwjxq/ZKAP">ZKAP</a> at USENIX Security 2024.</span></li>
+      <li><time>2024</time><span><em>Refinement Types for Visualization</em> appears at ASE 2024.</span></li>
+      <li><time>2023</time><span>Two papers at PLDI 2023: <a href="https://github.com/Veridise/Picus">Picus</a> and conflict-driven synthesis for layout engines.</span></li>
+      <li><time>2023</time><span>Yanju Chen defends the Ph.D. thesis, <em>Deduction-Powered Neural Program Synthesis: A Synergistic Perspective</em>.</span></li>
+      <li><time>2022</time><span><em>Visualization Question Answering Using Introspective Program Synthesis</em> wins a Distinguished Paper Award at PLDI 2022.</span></li>
+      <li><time>2022</time><span><a href="https://github.com/UCSB-PLSE/solid-public">SolType</a> appears at POPL 2022, <a href="https://github.com/ucsb-seclab/sailfish">Sailfish</a> at IEEE S&amp;P 2022, and Hecate at ASPLOS 2022.</span></li>
+      <li><time>2021</time><span><em>Falx</em> wins a Best Paper Award at CHI 2021.</span></li>
+      <li><time>2021</time><span>Yu Feng receives a Google Faculty Research Award.</span></li>
+      <li><time>2020</time><span><em>Summary-Based Symbolic Evaluation for Smart Contracts</em> wins a Distinguished Paper Award at ASE 2020.</span></li>
     </ul>
-  </section>
+  </div></div>
+  <button class="toggle" type="button" aria-expanded="false" aria-controls="more-news" data-open="Fewer news" data-closed="All news"><span class="chev">&rsaquo;</span><span class="txt">All news</span></button>
+</section>
 
-  <section id="faculty">
-  <h2>Faculty</h2>
-  <ul class="photo-list">
-    <li><a href="https://sites.cs.ucsb.edu/~bultan/"><img src="photos/tevfik_bultan.jpg"><span class="caption">Tevfik Bultan</span></a></li>
-    <li><a href="https://fredfeng.github.io/"><img src="photos/yu_feng.jpg"><span class="caption">Yu Feng</span></a></li>
-    <li><a href="https://hardekbc.github.io/"><img src="photos/ben_hardekopf.jpg"><span class="caption">Ben Hardekopf</span></a></li>
-    <li><a href="https://sites.cs.ucsb.edu/~ckrintz/"><img src="photos/chandra_krintz.jpg"><span class="caption">Chandra Krintz</span></a></li>
-    <li><a href="https://sites.cs.ucsb.edu/~chris/"><img src="photos/christopher_kruegel.jpg"><span class="caption">Christopher Kruegel</span></a></li>
-    <li><a href="https://sites.cs.ucsb.edu/~vigna/"><img src="photos/giovanni_vigna.jpg"><span class="caption">Giovanni Vigna</span></a></li>
+<section id="people" class="reveal">
+  <h2>People</h2>
+
+  <h3>Faculty</h3>
+  <ul class="people">
+    <li><a href="https://fredfeng.github.io/"><img src="photos/yu_feng.jpg" alt=""><b>Yu Feng</b>Associate Professor</a></li>
   </ul>
-  </section>
 
-
-  <section id="grad-students">
-  <h2>Grad Students</h2>
-  <ul class="photo-list">
-    <li><a href="https://uc.sb/"><img src="photos/hanzhi_liu.jpg"><span class="caption">Hanzhi Liu</span></a></li>
-    <li><a href="https://whbjzzwjxq.github.io/"><img src="photos/hongbo_wen.jpg"><span class="caption">Hongbo Wen</span></a></li>
+  <h3>Ph.D. Students</h3>
+  <ul class="people">
+    <li><a href="https://uc.sb/"><img src="photos/hanzhi_liu.jpg" alt=""><b>Hanzhi Liu</b>Ph.D. student</a></li>
+    <li><a href="https://whbjzzwjxq.github.io/"><img src="photos/hongbo_wen.jpg" alt=""><b>Hongbo Wen</b>Ph.D. student</a></li>
   </ul>
-  </section>
 
-
-
-  <section id="alumni">
-  <h2>Alumni</h2>
-  <ul class="photo-list alumni-list">
-    <li><a href="https://junrui-liu.github.io/"><img src="photos/junrui_liu.jpg"><span class="caption">Junrui Liu</span></a><span class="info">Ph.D. 2021&ndash;2026<br>Assistant Professor, Cal Poly</span></li>
-    <li><a href="https://scf.so/"><img src="photos/chaofan_shou.jpg"><span class="caption">Chaofan Shou</span></a><span class="info">B.S. 2022&ndash;2023<br>Co-founder, Fuzzland and Yeta AI</span></li>
-    <li><a href=""><img src="photos/bryan_tan.jpg"><span class="caption">Bryan Tan</span></a><span class="info">B.S. 2021&ndash;2023<br>Compiler Engineer, Amazon</span></li>
-    <li><a href="https://chyanju.github.io/"><img src="photos/yanju_chen.jpg"><span class="caption">Yanju Chen</span></a><span class="info">Ph.D. 2018&ndash;2023<br>Postdoc, UC San Diego</span></li>
+  <h3>Alumni</h3>
+  <ul class="people">
+    <li><a href="https://junrui-liu.github.io/"><img src="photos/junrui_liu.jpg" alt=""><b>Junrui Liu</b>Ph.D. 2021&ndash;2026<br><span class="now">Assistant Professor, Cal Poly</span></a></li>
+    <li><a href="https://scf.so/"><img src="photos/chaofan_shou.jpg" alt=""><b>Chaofan Shou</b>B.S. 2022&ndash;2023<br><span class="now">Co-founder, Fuzzland and Yeta AI</span></a></li>
+    <li><span class="card"><img src="photos/bryan_tan.jpg" alt=""><b>Bryan Tan</b>B.S. 2021&ndash;2023<br><span class="now">Compiler Engineer, Amazon</span></span></li>
+    <li><a href="https://chyanju.github.io/"><img src="photos/yanju_chen.jpg" alt=""><b>Yanju Chen</b>Ph.D. 2018&ndash;2023<br><span class="now">Postdoc, UC San Diego</span></a></li>
   </ul>
-  </section>
+</section>
 
+<section id="publications" class="reveal">
+  <h2>Featured Publications</h2>
+  <ul class="rows">
+    <li><time>2022</time><span>
+      <a class="title" href="https://dl.acm.org/doi/10.1145/3519939.3523709">Visualization Question Answering Using Introspective Program Synthesis</a>
+      <span class="authors"><b>Yanju Chen</b>, Xifeng Yan, <b>Yu Feng</b></span>
+      <span class="venue">PLDI 2022 <span class="award">Distinguished Paper</span></span></span></li>
+    <li><time>2021</time><span>
+      <a class="title" href="https://arxiv.org/pdf/2102.01024.pdf">Falx: Synthesis-Powered Visualization Authoring</a>
+      <span class="authors">Chenglong Wang, <b>Yu Feng</b>, Ras Bodik, Isil Dillig, Alvin Cheung, Amy J. Ko</span>
+      <span class="venue">CHI 2021 <span class="award">Best Paper</span></span></span></li>
+    <li><time>2020</time><span>
+      <a class="title" href="https://fredfeng.github.io/papers/ase20-solar.pdf">Summary-Based Symbolic Evaluation for Smart Contracts</a>
+      <span class="authors"><b>Yu Feng</b>, Emina Torlak, Ras Bodik</span>
+      <span class="venue">ASE 2020 <span class="award">Distinguished Paper</span></span></span></li>
+    <li><time>2018</time><span>
+      <a class="title" href="https://fredfeng.github.io/papers/pldi18-neo.pdf">Program Synthesis using Conflict-Driven Learning</a>
+      <span class="authors"><b>Yu Feng</b>, Ruben Martins, Osbert Bastani, Isil Dillig</span>
+      <span class="venue">PLDI 2018 <span class="award">Distinguished Paper</span></span></span></li>
+  </ul>
+  <p class="note" style="margin-top:.8em">Full list on <a href="https://scholar.google.co.uk/citations?user=urQ9fNgAAAAJ">Google Scholar</a>.</p>
+</section>
 
+<section id="projects" class="reveal">
+  <h2>Featured Projects</h2>
+  <ul class="rows">
+    <li><time>2027</time><span><a class="title" href="https://github.com/whbjzzwjxq/beak-fuzz">Beak</a><span class="desc">Semantic fuzzing that finds bugs in zero-knowledge virtual machines.</span><span class="venue">NDSS 2027</span></span></li>
+    <li><time>2025</time><span><a class="title" href="https://github.com/sjxer723/Tabby">Tabby</a><span class="desc">A synthesis-aided compiler for high-performance zero-knowledge proof circuits.</span><span class="venue">OOPSLA 2025</span></span></li>
+    <li><time>2024</time><span><a class="title" href="https://github.com/whbjzzwjxq/Foray">Foray</a><span class="desc">Attack synthesis against deep logical vulnerabilities in DeFi protocols.</span><span class="venue">CCS 2024</span></span></li>
+    <li><time>2023</time><span><a class="title" href="https://github.com/Veridise/Picus">Picus</a><span class="desc">Automated detection of under-constrained circuits in zero-knowledge proofs.</span><span class="venue">PLDI 2023</span></span></li>
+  </ul>
+  <div class="collapse" id="more-projects"><div>
+    <ul class="rows">
+      <li><time>2026</time><span><a class="title" href="https://github.com/RiemaLabs/thunderbolt/">Thunderbolt</a><span class="desc">Fast asynchronous off-chain Bitcoin transfers.</span><span class="venue">CCS 2026</span></span></li>
+      <li><time>2024</time><span><a class="title" href="https://github.com/whbjzzwjxq/ZKAP">ZKAP</a><span class="desc">Practical security analysis of zero-knowledge proof circuits.</span><span class="venue">USENIX Security 2024</span></span></li>
+      <li><time>2024</time><span><a class="title" href="https://eprint.iacr.org/2023/547">Coda</a><span class="desc">Certifying zero-knowledge circuits with refinement types.</span><span class="venue">IEEE S&amp;P 2024</span></span></li>
+      <li><time>2022</time><span><a class="title" href="https://github.com/chyanju/SolInv">SolInv</a><span class="desc">Learning smart contract invariants with reinforcement learning.</span><span class="venue">ASE 2022</span></span></li>
+      <li><time>2022</time><span><a class="title" href="https://github.com/chyanju/Poe">Poe</a><span class="desc">Visualization question answering using introspective program synthesis.</span><span class="venue">PLDI 2022</span></span></li>
+      <li><time>2022</time><span><a class="title" href="https://github.com/ucsb-seclab/sailfish">Sailfish</a><span class="desc">Vetting smart contract state-inconsistency bugs in seconds.</span><span class="venue">IEEE S&amp;P 2022</span></span></li>
+      <li><time>2022</time><span><a class="title" href="https://github.com/UCSB-PLSE/solid-public">SolType</a><span class="desc">Refinement types for Solidity.</span><span class="venue">POPL 2022</span></span></li>
+      <li><time>2022</time><span><a class="title" href="https://github.com/chyanju/hecate">Hecate</a><span class="desc">Tree traversal synthesis using domain-specific symbolic compilation.</span><span class="venue">ASPLOS 2022</span></span></li>
+      <li><time>2019</time><span><a class="title" href="https://github.com/chyanju/MARS-Dataset">Mars</a><span class="desc">Synthesis from multi-layer specifications.</span><span class="venue">FSE 2019</span></span></li>
+      <li><time>2019</time><span><a class="title" href="https://github.com/fredfeng/Trinity">Trinity</a><span class="desc">An extensible synthesis framework for data science.</span><span class="venue">VLDB 2019</span></span></li>
+    </ul>
+  </div></div>
+  <button class="toggle" type="button" aria-expanded="false" aria-controls="more-projects" data-open="Fewer projects" data-closed="All projects"><span class="chev">&rsaquo;</span><span class="txt">All projects</span></button>
+</section>
 
-</body></html>
+</main>
+
+<footer>
+  Department of Computer Science, University of California, Santa Barbara.
+  <a href="https://github.com/ucsbplse">GitHub</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  // expand / collapse
+  document.querySelectorAll('.toggle').forEach(function (btn) {
+    var box = document.getElementById(btn.getAttribute('aria-controls'));
+    btn.addEventListener('click', function () {
+      var open = box.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.querySelector('.txt').textContent = btn.dataset[open ? 'open' : 'closed'];
+      var items = box.querySelectorAll('.rows > li');
+      items.forEach(function (li, i) { li.style.transitionDelay = open ? (60 + i * 25) + 'ms' : '0ms'; });
+    });
+  });
+
+  // fade sections in, one after another, once the page loads
+  document.querySelectorAll('.reveal').forEach(function (el, i) {
+    setTimeout(function () { el.classList.add('in'); }, 40 + i * 80);
+  });
+
+  // mark the nav entry for the section in view
+  var links = {};
+  document.querySelectorAll('nav a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!links[e.target.id]) return;
+      if (e.isIntersecting) {
+        Object.values(links).forEach(function (a) { a.classList.remove('active'); });
+        links[e.target.id].classList.add('active');
+      }
+    });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) spy.observe(s); });
+})();
+</script>
+</body>
+</html>
