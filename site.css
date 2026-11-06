@@ -437,7 +437,6 @@ footer {
 }
 footer a { color: var(--muted); text-decoration-color: currentColor; }
 footer a:hover { color: var(--link); }
-footer .meta { display: flex; gap: 16px; }
 
 /* ---------- motion ---------- */
 @media (prefers-reduced-motion: no-preference) {
